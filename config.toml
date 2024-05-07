@@ -1,0 +1,169 @@
+[global]
+
+log_level = 'debug'
+
+[mode]
+
+[mode.clients]
+
+enabled = true
+
+refresh = true
+
+# Whether or not to enable misbehaviour detection for clients. [Default: true]
+misbehaviour = true
+
+# Specify the connections mode.
+[mode.connections]
+
+# Whether or not to enable the connection workers for handshake completion. [Required]
+enabled = true
+
+# Specify the channels mode.
+[mode.channels]
+
+# Whether or not to enable the channel workers for handshake completion. [Required]
+enabled = true
+
+# Specify the packets mode.
+[mode.packets]
+
+# Whether or not to enable the packet workers. [Required]
+enabled = true
+
+clear_interval = 100
+
+# Whether or not to clear packets on start. [Default: true]
+clear_on_start = true
+
+tx_confirmation = true
+
+# Auto register the counterparty payee on a destination chain to
+# the relayer's address on the source chain. This can be used
+# for simple configuration of the relayer to receive fees for
+# relaying RecvPacket on fee-enabled channels.
+# For more complex configuration, turn this off and use the CLI
+# to manually register the payee addresses.
+# [Default: false]
+auto_register_counterparty_payee = false
+
+[rest]
+
+enabled = false
+
+host = '127.0.0.1'
+
+port = 3000
+
+[telemetry]
+
+# Whether or not to enable the telemetry service. Default: false
+enabled = false
+
+# Specify the IPv4/6 host over which the built-in HTTP server will serve the metrics
+# gathered by the telemetry service. Default: 127.0.0.1
+host = '127.0.0.1'
+
+# Specify the port over which the built-in HTTP server will serve the metrics gathered
+# by the telemetry service. Default: 3001
+port = 3001
+
+[telemetry.buckets]
+
+# ---------------------------------------------------------------------------------------------
+
+[[chains]]
+id = 'chain1'
+ccv_consumer_chain = false
+rpc_addr = 'http://127.0.0.1:16657'
+grpc_addr = 'http://127.0.0.1:8090'
+event_source = { mode = 'push', url = 'ws://127.0.0.1:16657/websocket', batch_delay = '500ms' }
+rpc_timeout = '10s'
+trusted_node = true
+account_prefix = 'cosmos'
+key_name = 'rly_wallet'
+address_type = { derivation = 'cosmos' }
+store_prefix = 'ibc'
+default_gas = 10000000
+max_gas = 10000000
+gas_price = { price = 0.001, denom = 'stake' }
+gas_multiplier = 1.2
+max_msg_num = 30
+max_tx_size = 2097152
+clock_drift = '5s'
+max_block_time = '30s'
+trusting_period = '14days'
+trust_threshold = { numerator = '2', denominator = '3' }
+memo_prefix = ''
+
+# ---------------------------------------------------------------------------------------------
+
+[[chains]]
+id = 'chain2'
+rpc_addr = 'http://127.0.0.1:26657'
+grpc_addr = 'http://127.0.0.1:8091'
+event_source = { mode = 'push', url = 'ws://127.0.0.1:26657/websocket', batch_delay = '500ms' }
+rpc_timeout = '10s'
+trusted_node = true
+account_prefix = 'cosmos'
+key_name = 'rly_wallet'
+store_prefix = 'ibc'
+default_gas = 10000000
+max_gas = 10000000
+gas_price = { price = 0.001, denom = 'stake' }
+gas_multiplier = 1.2
+max_msg_num = 30
+max_tx_size = 2097152
+clock_drift = '5s'
+max_block_time = '30s'
+trusting_period = '14days'
+trust_threshold = { numerator = '1', denominator = '3' }
+address_type = { derivation = 'cosmos' }
+
+# ---------------------------------------------------------------------------------------------
+
+[[chains]]
+id = 'chain3'
+rpc_addr = 'http://127.0.0.1:36657'
+grpc_addr = 'http://127.0.0.1:8092'
+event_source = { mode = 'push', url = 'ws://127.0.0.1:36657/websocket', batch_delay = '500ms' }
+rpc_timeout = '10s'
+trusted_node = true
+account_prefix = 'cosmos'
+key_name = 'rly_wallet'
+store_prefix = 'ibc'
+default_gas = 10000000
+max_gas = 10000000
+gas_price = { price = 0.001, denom = 'stake' }
+gas_multiplier = 1.2
+max_msg_num = 30
+max_tx_size = 2097152
+clock_drift = '5s'
+max_block_time = '30s'
+trusting_period = '14days'
+trust_threshold = { numerator = '1', denominator = '3' }
+address_type = { derivation = 'cosmos' }
+
+# ---------------------------------------------------------------------------------------------
+
+[[chains]]
+id = 'chain4'
+rpc_addr = 'http://127.0.0.1:46657'
+grpc_addr = 'http://127.0.0.1:8093'
+event_source = { mode = 'push', url = 'ws://127.0.0.1:46657/websocket', batch_delay = '500ms' }
+rpc_timeout = '10s'
+trusted_node = true
+account_prefix = 'cosmos'
+key_name = 'rly_wallet'
+store_prefix = 'ibc'
+default_gas = 10000000
+max_gas = 10000000
+gas_price = { price = 0.001, denom = 'stake' }
+gas_multiplier = 1.2
+max_msg_num = 30
+max_tx_size = 2097152
+clock_drift = '5s'
+max_block_time = '30s'
+trusting_period = '14days'
+trust_threshold = { numerator = '1', denominator = '3' }
+address_type = { derivation = 'cosmos' }
