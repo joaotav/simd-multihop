@@ -1,2 +1,2 @@
 # simd-multihop
-A collection of scripts to configure and launch a testnet of Cosmos SDK simd chains 
+Scripts to configure and launch a testnet of Cosmos SDK simd chains configured for use with multi-hop IBC channels.
