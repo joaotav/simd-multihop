@@ -78,10 +78,16 @@ make hermes-keys
 make start
 ```
 
+#### To create the clients between the chains (see `create_clients.sh` for detailed info on ClientIds):
+
+```
+make clients
+```
+
 #### To establish the connections between the chains (see `create_connections.sh` for detailed info on ClientIds and ConnectionIds):
 
 ```
-make connect-chains
+make connections
 ```
 
 
