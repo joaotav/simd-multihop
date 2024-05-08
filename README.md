@@ -1,8 +1,8 @@
-# Simd Multihop
+# `simd` Multihop
 Scripts to configure, launch and connect multiple ibc-go `simd` chains via IBC using the Hermes Relayer.
 
 ## Prerequisites
-### Install and build Polymer's fork of ibc-go with support for multi-hop channels:
+ Install and build Polymer's fork of ibc-go with support for multi-hop channels:
 ```
     git clone https://github.com/polymerdao/ibc-go.git polymer-multihop && cd polymer-multihop
     make build
@@ -35,7 +35,7 @@ Replace the contents of the `config.toml` file in `HERMES_CONFIG_DIR` with the c
 
 ## Usage
 
-To launch a testnet with 4 chains (chain1, chain2, chain3, chain4) and a connection path `chain1 <--> chain2 <--> chain3 <--> chain4`:
+#### To configure and launch a testnet with 4 connected chains `chain1 <--> chain2 <--> chain3 <--> chain4` with a single command:
 
 ```
 make multihop-testnet
@@ -59,8 +59,30 @@ The resulting connection paths are as follows:
   +--------+                   +--------+                   +--------+                   +--------+
 
 ```
+## To execute each step individually:
 
+#### To initialize the configuration and wallets for the `simd` chains:
 
+```
+make init
+```
+
+#### To add wallet keys to `hermes`:
+```
+make hermes-keys
+```
+
+#### To start the `simd` chains:
+
+```
+make start
+```
+
+#### To establish the connections between the chains (see `create_connections.sh` for detailed info on ClientIds and ConnectionIds):
+
+```
+make connect-chains
+```
 
 
 
