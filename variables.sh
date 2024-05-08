@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BINARY=simd
+BINARY=$HOME/polymer-multihop/build/simd
 
 # Directory in which to store the data for chains and nodes
 CHAIN_DIR=./simd_data
