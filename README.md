@@ -33,7 +33,7 @@ HERMES_CONFIG_DIR=$HOME/.hermes/config.toml
 
 Replace the contents of the `config.toml` file in `HERMES_CONFIG_DIR` with the contents of the `config.toml` file in this repository.
 
-## Usage
+## Launching the testnet
 
 #### To configure and launch a testnet with 4 connected chains `chain1 <--> chain2 <--> chain3 <--> chain4` with a single command:
 
