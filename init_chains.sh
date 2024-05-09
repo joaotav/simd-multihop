@@ -69,10 +69,10 @@ echo $WALLET_MNEMONIC_7 | $BINARY keys add wallet1 --home $CHAIN_DIR/$CHAINID_4 
 echo $WALLET_MNEMONIC_8 | $BINARY keys add wallet2 --home $CHAIN_DIR/$CHAINID_4 --recover --keyring-backend=test
 
 
-echo $RLY_MNEMONIC_1 | $BINARY keys add rly1 --home $CHAIN_DIR/$CHAINID_1 --recover --keyring-backend=test 
-echo $RLY_MNEMONIC_2 | $BINARY keys add rly2 --home $CHAIN_DIR/$CHAINID_2 --recover --keyring-backend=test 
-echo $RLY_MNEMONIC_3 | $BINARY keys add rly3 --home $CHAIN_DIR/$CHAINID_3 --recover --keyring-backend=test 
-echo $RLY_MNEMONIC_4 | $BINARY keys add rly4 --home $CHAIN_DIR/$CHAINID_4 --recover --keyring-backend=test 
+echo $RLY_MNEMONIC_1 | $BINARY keys add rly_chain1 --home $CHAIN_DIR/$CHAINID_1 --recover --keyring-backend=test 
+echo $RLY_MNEMONIC_2 | $BINARY keys add rly_chain2 --home $CHAIN_DIR/$CHAINID_2 --recover --keyring-backend=test 
+echo $RLY_MNEMONIC_3 | $BINARY keys add rly_chain3 --home $CHAIN_DIR/$CHAINID_3 --recover --keyring-backend=test 
+echo $RLY_MNEMONIC_4 | $BINARY keys add rly_chain4 --home $CHAIN_DIR/$CHAINID_4 --recover --keyring-backend=test 
 
 $BINARY genesis add-genesis-account $($BINARY --home $CHAIN_DIR/$CHAINID_1 keys show val1 --keyring-backend test -a) 100000000000stake  --home $CHAIN_DIR/$CHAINID_1
 $BINARY genesis add-genesis-account $($BINARY --home $CHAIN_DIR/$CHAINID_2 keys show val2 --keyring-backend test -a) 100000000000stake  --home $CHAIN_DIR/$CHAINID_2
@@ -91,10 +91,10 @@ $BINARY genesis add-genesis-account $($BINARY --home $CHAIN_DIR/$CHAINID_3 keys 
 $BINARY genesis add-genesis-account $($BINARY --home $CHAIN_DIR/$CHAINID_4 keys show wallet1 --keyring-backend test -a) 100000000000stake  --home $CHAIN_DIR/$CHAINID_4
 $BINARY genesis add-genesis-account $($BINARY --home $CHAIN_DIR/$CHAINID_4 keys show wallet2 --keyring-backend test -a) 100000000000stake  --home $CHAIN_DIR/$CHAINID_4
 
-$BINARY genesis add-genesis-account $($BINARY --home $CHAIN_DIR/$CHAINID_1 keys show rly1 --keyring-backend test -a) 100000000000stake  --home $CHAIN_DIR/$CHAINID_1
-$BINARY genesis add-genesis-account $($BINARY --home $CHAIN_DIR/$CHAINID_2 keys show rly2 --keyring-backend test -a) 100000000000stake  --home $CHAIN_DIR/$CHAINID_2
-$BINARY genesis add-genesis-account $($BINARY --home $CHAIN_DIR/$CHAINID_3 keys show rly3 --keyring-backend test -a) 100000000000stake  --home $CHAIN_DIR/$CHAINID_3
-$BINARY genesis add-genesis-account $($BINARY --home $CHAIN_DIR/$CHAINID_4 keys show rly4 --keyring-backend test -a) 100000000000stake  --home $CHAIN_DIR/$CHAINID_4
+$BINARY genesis add-genesis-account $($BINARY --home $CHAIN_DIR/$CHAINID_1 keys show rly_chain1 --keyring-backend test -a) 100000000000stake  --home $CHAIN_DIR/$CHAINID_1
+$BINARY genesis add-genesis-account $($BINARY --home $CHAIN_DIR/$CHAINID_2 keys show rly_chain2 --keyring-backend test -a) 100000000000stake  --home $CHAIN_DIR/$CHAINID_2
+$BINARY genesis add-genesis-account $($BINARY --home $CHAIN_DIR/$CHAINID_3 keys show rly_chain3 --keyring-backend test -a) 100000000000stake  --home $CHAIN_DIR/$CHAINID_3
+$BINARY genesis add-genesis-account $($BINARY --home $CHAIN_DIR/$CHAINID_4 keys show rly_chain4 --keyring-backend test -a) 100000000000stake  --home $CHAIN_DIR/$CHAINID_4
 
 echo "Creating and collecting gentx..."
 $BINARY genesis gentx val1 10000000000stake --home $CHAIN_DIR/$CHAINID_1 --chain-id $CHAINID_1 --keyring-backend test

@@ -81,7 +81,7 @@ event_source = { mode = 'push', url = 'ws://127.0.0.1:16657/websocket', batch_de
 rpc_timeout = '10s'
 trusted_node = true
 account_prefix = 'cosmos'
-key_name = 'rly_wallet'
+key_name = 'rly_chain1'
 address_type = { derivation = 'cosmos' }
 store_prefix = 'ibc'
 default_gas = 10000000
@@ -106,7 +106,7 @@ event_source = { mode = 'push', url = 'ws://127.0.0.1:26657/websocket', batch_de
 rpc_timeout = '10s'
 trusted_node = true
 account_prefix = 'cosmos'
-key_name = 'rly_wallet'
+key_name = 'rly_chain2'
 store_prefix = 'ibc'
 default_gas = 10000000
 max_gas = 10000000
@@ -130,7 +130,7 @@ event_source = { mode = 'push', url = 'ws://127.0.0.1:36657/websocket', batch_de
 rpc_timeout = '10s'
 trusted_node = true
 account_prefix = 'cosmos'
-key_name = 'rly_wallet'
+key_name = 'rly_chain3'
 store_prefix = 'ibc'
 default_gas = 10000000
 max_gas = 10000000
@@ -154,7 +154,7 @@ event_source = { mode = 'push', url = 'ws://127.0.0.1:46657/websocket', batch_de
 rpc_timeout = '10s'
 trusted_node = true
 account_prefix = 'cosmos'
-key_name = 'rly_wallet'
+key_name = 'rly_chain4'
 store_prefix = 'ibc'
 default_gas = 10000000
 max_gas = 10000000
