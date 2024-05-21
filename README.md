@@ -4,8 +4,8 @@ Scripts to configure, launch and connect multiple ibc-go `simd` chains via IBC u
 ## Prerequisites
  Install and build Polymer's fork of ibc-go with support for multi-hop channels:
 ```
-    git clone https://github.com/polymerdao/ibc-go.git polymer-multihop && cd polymer-multihop
-    make build
+git clone https://github.com/polymerdao/ibc-go.git polymer-multihop && cd polymer-multihop
+make build
 ```
 The binary for `simd` will be located in `polymer-multihop/build/simd`.
 
