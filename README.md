@@ -40,6 +40,19 @@ Replace the contents of the `config.toml` file in `HERMES_CONFIG_DIR` with the c
 ```
 make multihop-testnet
 ```
+The clients created for chains to track each other are as follows:
+
+
+- **chain4** tracks **chain3** with ClientId "**07-tendermint-0**" 
+
+- **chain3** tracks **chain4** with ClientId "**07-tendermint-0**"
+- **chain3** tracks **chain2** with ClientId "**07-tendermint-1**" 
+
+- **chain2** tracks **chain3** with ClientId "**07-tendermint-0"**
+- **chain2** tracks **chain1** with ClientId "**07-tendermint-1**"
+
+- **chain1** tracks **chain2** with ClientId "**07-tendermint-0**"
+
 
 The resulting connection paths are as follows:
 
