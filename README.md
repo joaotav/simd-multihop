@@ -40,6 +40,8 @@ Replace the contents of the `config.toml` file in `HERMES_CONFIG_DIR` with the c
 ```
 make multihop-testnet
 ```
+The resulting chain topology is the following:
+
 ![image](https://github.com/joaotav/simd-multihop/assets/22059902/cda2f992-e3b4-4f85-a4fb-58cb86ff465b)
 
 ## To execute each step individually:
