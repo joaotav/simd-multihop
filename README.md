@@ -40,38 +40,8 @@ Replace the contents of the `config.toml` file in `HERMES_CONFIG_DIR` with the c
 ```
 make multihop-testnet
 ```
-The clients created for chains to track each other are as follows:
+![image](https://github.com/joaotav/simd-multihop/assets/22059902/cda2f992-e3b4-4f85-a4fb-58cb86ff465b)
 
-
-- **chain4** tracks **chain3** with ClientId "**07-tendermint-0**" 
-
-- **chain3** tracks **chain4** with ClientId "**07-tendermint-0**"
-- **chain3** tracks **chain2** with ClientId "**07-tendermint-1**" 
-
-- **chain2** tracks **chain3** with ClientId "**07-tendermint-0"**
-- **chain2** tracks **chain1** with ClientId "**07-tendermint-1**"
-
-- **chain1** tracks **chain2** with ClientId "**07-tendermint-0**"
-
-
-The resulting connection paths are as follows:
-
-```
- Connection path from chain4 to chain1: 
-
-  +--------+    connection-1   +--------+    connection-1   +--------+    connection-0   +--------+
-  | chain1 | <---------------- | chain2 | <---------------- | chain3 | <---------------- | chain4 |
-  +--------+                   +--------+                   +--------+                   +--------+
-
- 
-
- Connection path from chain1 to chain4: 
-
-  +--------+    connection-0   +--------+    connection-0   +--------+    connection-0   +--------+
-  | chain1 | ----------------> | chain2 | ----------------> | chain3 | ----------------> | chain4 |
-  +--------+                   +--------+                   +--------+                   +--------+
-
-```
 ## To execute each step individually:
 
 #### To initialize the configuration and wallets for the `simd` chains:
