@@ -4,8 +4,8 @@ Scripts to configure, launch and connect multiple ibc-go `simd` chains via IBC u
 ## Prerequisites
  Install and build Polymer's fork of ibc-go with support for multi-hop channels:
 ```
-    git clone https://github.com/polymerdao/ibc-go.git polymer-multihop && cd polymer-multihop
-    make build
+git clone https://github.com/polymerdao/ibc-go.git polymer-multihop && cd polymer-multihop
+make build
 ```
 The binary for `simd` will be located in `polymer-multihop/build/simd`.
 
@@ -40,25 +40,10 @@ Replace the contents of the `config.toml` file in `HERMES_CONFIG_DIR` with the c
 ```
 make multihop-testnet
 ```
+The resulting chain topology is the following:
 
-The resulting connection paths are as follows:
+![image](https://github.com/joaotav/simd-multihop/assets/22059902/cda2f992-e3b4-4f85-a4fb-58cb86ff465b)
 
-```
- Connection path from chain4 to chain1: 
-
-  +--------+    connection-1   +--------+    connection-1   +--------+    connection-0   +--------+
-  | chain1 | <---------------- | chain2 | <---------------- | chain3 | <---------------- | chain4 |
-  +--------+                   +--------+                   +--------+                   +--------+
-
- 
-
- Connection path from chain1 to chain4: 
-
-  +--------+    connection-0   +--------+    connection-0   +--------+    connection-0   +--------+
-  | chain1 | ----------------> | chain2 | ----------------> | chain3 | ----------------> | chain4 |
-  +--------+                   +--------+                   +--------+                   +--------+
-
-```
 ## To execute each step individually:
 
 #### To initialize the configuration and wallets for the `simd` chains:
