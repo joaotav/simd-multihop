@@ -35,6 +35,10 @@ Replace the contents of the `config.toml` file in `HERMES_CONFIG_DIR` with the c
 
 ## Launching the testnet
 
+> [!NOTE]  
+> During testnet initialization, the scripts create additional connections involving a dummy chain, `chain5`, in order to increase connection identifiers and achieve uniquely
+identified connections between chains 1, 2, 3 and 4. This facilitates the testing and debugging of multihop channel operations.
+
 #### To configure and launch a testnet with 4 connected chains `chain1 <--> chain2 <--> chain3 <--> chain4` with a single command:
 
 ```
@@ -42,7 +46,7 @@ make multihop-testnet
 ```
 The resulting chain topology is the following:
 
-![image](https://github.com/joaotav/simd-multihop/assets/22059902/cda2f992-e3b4-4f85-a4fb-58cb86ff465b)
+![image](https://github.com/joaotav/simd-multihop/assets/22059902/64037fe4-fda3-4ec6-8073-ed41ae3eeb5b)
 
 ## To execute each step individually:
 
