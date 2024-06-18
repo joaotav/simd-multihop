@@ -31,3 +31,10 @@ echo $RLY_MNEMONIC_4 | $HERMES_BINARY --config $HERMES_CONFIG_DIR keys add --cha
 
 echo $WALLET_MNEMONIC_7 | $HERMES_BINARY --config $HERMES_CONFIG_DIR keys add --chain chain4 --mnemonic-file /dev/stdin --key-name wallet1 --overwrite
 echo $WALLET_MNEMONIC_8 | $HERMES_BINARY --config $HERMES_CONFIG_DIR keys add --chain chain4 --mnemonic-file /dev/stdin --key-name wallet2 --overwrite
+
+# Restore keys for chain5
+# Add key to enable relayer to pay transaction submission fees on chain5 (the same key must be set on hermes' config.toml under key_name)
+echo $RLY_MNEMONIC_5 | $HERMES_BINARY --config $HERMES_CONFIG_DIR keys add --chain chain5 --mnemonic-file /dev/stdin --key-name rly_chain5 --overwrite
+
+echo $WALLET_MNEMONIC_9 | $HERMES_BINARY --config $HERMES_CONFIG_DIR keys add --chain chain5 --mnemonic-file /dev/stdin --key-name wallet1 --overwrite
+echo $WALLET_MNEMONIC_10 | $HERMES_BINARY --config $HERMES_CONFIG_DIR keys add --chain chain5 --mnemonic-file /dev/stdin --key-name wallet2 --overwrite

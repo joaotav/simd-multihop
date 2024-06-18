@@ -20,6 +20,10 @@ echo "Starting $CHAINID_4 in $CHAIN_DIR..."
 echo "Creating log file at $CHAIN_DIR/$CHAINID_4.log"
 $BINARY start --log_level info --log_format json --home $CHAIN_DIR/$CHAINID_4 --pruning=nothing --grpc.address="0.0.0.0:$GRPCPORT_4" > $CHAIN_DIR/$CHAINID_4.log 2>&1 &
 
+echo "Starting $CHAINID_5 in $CHAIN_DIR..."
+echo "Creating log file at $CHAIN_DIR/$CHAINID_5.log"
+$BINARY start --log_level info --log_format json --home $CHAIN_DIR/$CHAINID_5 --pruning=nothing --grpc.address="0.0.0.0:$GRPCPORT_5" > $CHAIN_DIR/$CHAINID_5.log 2>&1 &
+
 echo -e "\nWaiting for chains to be fully initialized...\n"
 
 sleep 10
