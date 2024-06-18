@@ -167,3 +167,28 @@ max_block_time = '30s'
 trusting_period = '14days'
 trust_threshold = { numerator = '1', denominator = '3' }
 address_type = { derivation = 'cosmos' }
+
+# ---------------------------------------------------------------------------------------------
+
+[[chains]]
+id = 'chain5'
+rpc_addr = 'http://127.0.0.1:56657'
+grpc_addr = 'http://127.0.0.1:8094'
+event_source = { mode = 'push', url = 'ws://127.0.0.1:56657/websocket', batch_delay = '500ms' }
+rpc_timeout = '10s'
+trusted_node = true
+account_prefix = 'cosmos'
+key_name = 'rly_chain5'
+store_prefix = 'ibc'
+default_gas = 10000000
+max_gas = 10000000
+gas_price = { price = 0.001, denom = 'stake' }
+gas_multiplier = 1.2
+max_msg_num = 30
+max_tx_size = 2097152
+clock_drift = '5s'
+max_block_time = '30s'
+trusting_period = '14days'
+trust_threshold = { numerator = '1', denominator = '3' }
+address_type = { derivation = 'cosmos' }
+
